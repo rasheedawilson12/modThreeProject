@@ -1,6 +1,6 @@
 {
   "proxy": "http://localhost:3001",
-  "name": "sei_cafe",
+  "name": "mod_three_project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
