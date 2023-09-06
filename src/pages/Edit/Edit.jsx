@@ -1,18 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-function Edit(props) {
-  const habit = props.selectHabit;
+function Edit({ habits, setHabits }) {
+  const [updatedHabit, setUpdatedHabit] = useState({
+    habit: "",
+    description: "",
+    complete: "",
+  });
+  const handleChange = (e) => {
+    setUpdatedHabit({ ...updatedHabit, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const habits = await axios.post("/api/habits/edit/:id", updatedHabit);
+      setHabits(habits);
+    } catch (err) {
+      console.log({ msg: err.message });
+    }
+  };
   return (
     <div>
-      <h1>New Habit Page</h1>
-      <form action={`/habits/edit/${habit._id}`} method="POST">
-        Name: <input type="text" name="name" />
+      <h1>Edit Habit</h1>
+      <form onSubmit={handleSubmit}>
+        Habit:
+        <input
+          type="text"
+          defaultValue={habits.habit}
+          onChange={handleChange}
+        />
         <br />
-        Description: <input type="text" name="description" />
+        Description:{" "}
+        <input
+          type="text"
+          defaultValue={habits.description}
+          onChange={handleChange}
+        />
         <br />
-        Completed: <input type="checkbox" name="complete" />
+        Complete:{" "}
+        {habits.complete ? (
+          <input type="checkbox" name="complete" defaultChecked />
+        ) : (
+          <input type="checkbox" name="complete" />
+        )}
         <br />
-        <input type="submit" name="" value="Create Habit" />
+        <input type="submit" name="" value="Finished Editing" />
       </form>
     </div>
   );
