@@ -17,9 +17,9 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/habits" element={<Main />} />
-            <Route path="/habits/new" element={<New />} />
-            <Route path="/habits/edit/:id" element={<Edit />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/new" element={<New />} />
+            <Route path="/edit/:id" element={<Edit />} />
           </Routes>
         </>
       ) : (
