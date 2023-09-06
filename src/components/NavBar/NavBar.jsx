@@ -9,9 +9,9 @@ function NavBar({ user, setUser }) {
   }
   return (
     <nav>
-      <Link to="/orders">Order History</Link>
+      <Link to="/habits">All Habits</Link>
       &nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
+      <Link to="/habits/new">Add Habit</Link>
       &nbsp; | &nbsp; <span>Welcome, {user.name}</span>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>

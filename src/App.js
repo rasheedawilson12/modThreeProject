@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
 import AuthPage from "./pages/AuthPage/AuthPage";
-import NewOrderPage from "./pages/NewOrderPage/NewOrderPage";
-import OrderHistoryPage from "./pages/OrderHistoryPage/OrderHistoryPage";
 import NavBar from "./components/NavBar/NavBar";
+import Main from "./pages/MainPage/MainPage";
+import New from "./pages/New/New";
+import Edit from "./pages/Edit/Edit";
 
 function App() {
   // array destructing
@@ -16,8 +17,9 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/habits" element={<Main />} />
+            <Route path="/habits/new" element={<New />} />
+            <Route path="/habits/edit/:id" element={<Edit />} />
           </Routes>
         </>
       ) : (

@@ -4,7 +4,7 @@ function New() {
   return (
     <div>
       <h1>New Habit Page</h1>
-      <form action="/fruits" method="POST">
+      <form action="/habits" method="POST">
         Name: <input type="text" name="name" />
         <br />
         Description: <input type="text" name="description" />

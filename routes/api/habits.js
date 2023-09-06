@@ -4,20 +4,51 @@ const Habit = require("../../models/Habit");
 
 // Get all habbits
 router.get("/habits", async (req, res) => {
-  let allHabits = await Habit.find({});
-  await res.render("Main", {
-    habits: allHabits,
-  });
+  try {
+    let allHabits = await Habit.find({});
+    res.json(allHabits);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
+});
+
+// Get individial habit
+router.get("/habits/:id", async (req, res) => {
+  try {
+    const eachHabit = await Habit.findById(req.params.id);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
+});
+
+// Create new habit
+router.post("/habits/new", async (req, res) => {
+  try {
+    const newHabit = await Habit.create(req.body);
+    res.json(newHabit);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
 });
 
 // Edit habit
-router.get("/habits/edit/:id", async (req, res) => {
-  const selectHabit = await Habit.findById(req.params.id);
-  res.render("Edit", { habit: selectHabit });
+router.put("/habits/edit/:id", async (req, res) => {
+  try {
+    const selectHabit = await Habit.findByIdAndUpdate(req.params.id, req.body);
+    res.json(selectHabit);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
 });
 
 // delete habit
 router.delete("/habits/:id", async (req, res) => {
-  await Habit.findByIdAndRemove(req.params.id);
-  res.redirect("/habits"); //redirect back to fruits index
+  try {
+    await Habit.findByIdAndRemove(req.params.id);
+    res.status(200).json({ msg: "Object deleted!" });
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
 });
+
+module.exports = router;
