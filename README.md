@@ -29,8 +29,12 @@ Axios
 CRUD Routes
 
 III. Getting Started
-Getting started I made sure to map out what needed to be imported on as much as possible on the App.js page and pass it down to the components that needed to use it. This allowed me to reuse data gotten only one time. I did hit snags on
+Getting started I made sure to map out what needed to be imported on as much as possible on the App.js page and pass it down to the components that needed to use it. This allowed me to reuse data gotten only one time. I did hit snags on when passing down and accessing my data (either it would be in an object or I couldn't get the correct pathway to the route). I was able to work through these issues with the help of my instructors and some of other memebers of my cohort.
 
 IV. Unsolved Problems
+I am currently having problems with the edit route posting.
+I am also having glitches with the New page not redirecting back to the main page after form submission.
+I am also having problems getting a turinary operarot to change the emoji from red to green once the client has checked the complete check box and updated to the task.
 
 V. Future Enchancements
+At the current moment I can't think of any extra features I would add. However, I would like to keep working on the client side to make sure all current features are working as smoothly as possible and don't cause any future problems.
