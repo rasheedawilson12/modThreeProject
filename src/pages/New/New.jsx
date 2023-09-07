@@ -1,11 +1,10 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function New({ setHabits }) {
   const [newHabit, setNewHabit] = useState({
     habit: "",
     description: "",
-    complete: "",
   });
 
   const handleChange = (e) => {
@@ -30,8 +29,8 @@ function New({ setHabits }) {
         Description:
         <input type="text" name="description" onChange={handleChange} />
         <br />
-        Completed: <input type="checkbox" name="complete" />
-        <br />
+        {/* Completed: <input type="checkbox" name="complete" />
+        <br /> */}
         <input
           type="submit"
           name=""

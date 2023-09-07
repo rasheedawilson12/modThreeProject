@@ -6,7 +6,6 @@ function Edit() {
   const [updatedHabit, setUpdatedHabit] = useState({
     habit: "",
     description: "",
-    complete: "",
   });
   const location = useLocation();
   const handleChange = (e) => {
@@ -43,13 +42,13 @@ function Edit() {
           onChange={handleChange}
         />
         <br />
-        Complete:{" "}
+        {/* Complete:{" "}
         {location.state.complete ? (
           <input type="checkbox" name="complete" defaultChecked />
         ) : (
           <input type="checkbox" name="complete" />
         )}
-        <br />
+        <br /> */}
         <input
           type="submit"
           name=""

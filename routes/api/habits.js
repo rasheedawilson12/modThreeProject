@@ -25,11 +25,11 @@ router.get("/:id", async (req, res) => {
 // Create new habit
 router.post("/new", async (req, res) => {
   try {
-    if (req.body.complete === "on") {
-      req.body.complete = true;
-    } else {
-      req.body.complete = false;
-    }
+    // if (req.body.complete === "on") {
+    //   req.body.complete = true;
+    // } else {
+    //   req.body.complete = false;
+    // }
     const newHabit = await Habit.create(req.body);
     res.json(newHabit);
   } catch (err) {

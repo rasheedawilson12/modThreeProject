@@ -14,7 +14,7 @@ function MainPage({ habits, handleDelete }) {
                 <div className="Task" key={i}>
                   <h3>{habit.habit}</h3>
                   <p>{habit.description}</p>
-                  {habit.complete === true ? <h3>💚</h3> : <h3>❤️</h3>}
+                  {/* {habit.complete === true ? <h3>💚</h3> : <h3>❤️</h3>} */}
                   <button
                     onClick={() => {
                       nav(`/edit/${habit._id}`, {
