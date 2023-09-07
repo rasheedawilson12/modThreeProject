@@ -8,7 +8,7 @@ function NavBar({ user, setUser }) {
     setUser(null);
   }
   return (
-    <nav>
+    <nav className="NavBar">
       <Link to="/">All Habits</Link>
       &nbsp; | &nbsp;
       <Link to="/new">Add Habit</Link>

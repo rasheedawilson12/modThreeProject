@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const eachHabit = await Habit.findById(req.params.id);
+    res.json(eachHabit);
   } catch (err) {
     res.status(400).json({ msg: err.message });
   }

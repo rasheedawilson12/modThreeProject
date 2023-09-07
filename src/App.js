@@ -12,6 +12,7 @@ import Edit from "./pages/Edit/Edit";
 function App() {
   // array destructing
   const [user, setUser] = useState(getUser());
+  const [deletedHabit, setDeletedHabit] = useState({});
   const [habits, setHabits] = useState([]);
 
   useEffect(() => {
@@ -23,9 +24,16 @@ function App() {
         console.log(error);
       }
     }
-    getHabits()
-  }, []);
-
+    getHabits();
+  }, [deletedHabit]);
+  const handleDelete = async (e, id) => {
+    try {
+      const deleted = await axios.delete(`/api/habits/${id}`);
+      setDeletedHabit(deleted);
+    } catch (err) {
+      console.log({ msg: err.message });
+    }
+  };
   return (
     <main className="App">
       {user ? (
@@ -34,13 +42,22 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Main habits={habits} setHabits={setHabits} />}
+              element={
+                <Main
+                  habits={habits}
+                  setHabits={setHabits}
+                  handleDelete={handleDelete}
+                />
+              }
             />
             <Route
               path="/new"
               element={<New habits={habits} setHabits={setHabits} />}
             />
-            <Route path="/edit/:id" element={<Edit />} />
+            <Route
+              path="/edit/:id"
+              element={<Edit habits={habits} setHabits={setHabits} />}
+            />
           </Routes>
         </>
       ) : (
