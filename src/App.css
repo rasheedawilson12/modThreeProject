@@ -90,6 +90,10 @@ button:hover {
   border-radius: 20px;
 }
 
+.formContainer {
+  border: solid black;
+}
+
 .editForm {
   border: solid black;
   width: 30%;
@@ -108,4 +112,53 @@ button:hover {
   padding: 10px;
   margin: 10px;
   border-radius: 20px;
+}
+
+.loginForm {
+  background-color: #ffa1f5;
+  font-size: 24px;
+  width: 45%;
+  margin: 10px auto;
+  line-height: 40px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.loginForm button {
+  font-size: 20px;
+  margin-top: 15px;
+  background-color: #053b50;
+  color: #eeeeee;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.signUpForm {
+  background-color: #ffa1f5;
+  font-size: 24px;
+  width: 50%;
+  margin: 10px auto;
+  line-height: 40px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.toggleButton {
+  background-color: #a6ff96;
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.loginForm button:hover {
+  background-color: white;
+  color: black;
+}
+
+.signUpForm button:hover {
+  filter: hue-rotate(150deg);
 }

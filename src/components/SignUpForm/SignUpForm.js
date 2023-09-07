@@ -41,10 +41,10 @@ function SignUpForm({ setUser }) {
   };
 
   return (
-    <div>
-      <div className="form-container">
+    <div className="formContainer">
+      <div className="signUpForm">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Name</label>
+          <label>Name: </label>
           <input
             type="text"
             name="name"
@@ -52,7 +52,8 @@ function SignUpForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <label>Email</label>
+          <br/>
+          <label>Email: </label>
           <input
             type="email"
             name="email"
@@ -60,7 +61,8 @@ function SignUpForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <label>Password</label>
+          <br/>
+          <label>Password: </label>
           <input
             type="password"
             name="password"
@@ -68,7 +70,8 @@ function SignUpForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <label>Confirm</label>
+          <br/>
+          <label>Confirm: </label>
           <input
             type="password"
             name="confirm"
@@ -76,6 +79,7 @@ function SignUpForm({ setUser }) {
             onChange={handleChange}
             required
           />
+          <br/>
           <button type="submit" disabled={disable}>
             SIGN UP
           </button>

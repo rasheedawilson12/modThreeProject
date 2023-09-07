@@ -8,20 +8,23 @@ function AuthPage({ setUser }) {
   return (
     <main>
       <div>
-        <h1>AuthPage</h1>
-        <button
-          onClick={() => {
-            setShowLogin(!showLogin);
-          }}
-        >
-          {showLogin ? "Sign up" : "Login"}
-        </button>
+        <h1>Task Minder Login</h1>
       </div>
-      {showLogin ? (
-        <LoginForm setUser={setUser} />
-      ) : (
-        <SignUpForm setUser={setUser} />
-      )}
+      <div className="loginForm">
+        {showLogin ? (
+          <LoginForm setUser={setUser} />
+        ) : (
+          <SignUpForm setUser={setUser} />
+        )}
+      </div>
+      <button
+        onClick={() => {
+          setShowLogin(!showLogin);
+        }}
+        className="toggleButton"
+      >
+        {showLogin ? "Sign up" : "Login"}
+      </button>
     </main>
   );
 }
